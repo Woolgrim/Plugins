@@ -1,0 +1,26 @@
+@import 'option/reset.scss';
+@import 'option/variable.scss';
+@import 'option/mixin.scss';
+@import 'option/fonts.scss';
+@import 'option/technical_styles.scss';
+body {
+    position: relative;
+
+    background-color: $colorbody;
+    height: 100vh;
+
+    font-family: $font;
+}
+.container {
+    @include containerWidth;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+// Підкулючаємо стилі для сайту @import
+@import 'body/header.scss';
+@import 'body/plugins.scss';
+
+@import 'body/footer.scss';
+

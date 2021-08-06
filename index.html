@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all"> <!--Індексація -->
+    <meta name="format-detection" content="telephone=no"/> <!-- Заборона авто підставки номерів тел в iphone -->
+    <meta name="description" content="Хочеш навчитсь мітко стріляти чи покращити свої навичк в стрільбі, тоді тобі донас. Дружній колектив, профейсійні інструктори, не вимушена атмосфера, найкращі умови для гарного відпочинку і чудово проведеного часу"> 
+    <meta name="keywords" content="#"> <!-- Ключові слова -->
+    <meta name="author" content="Artem Popovich"> <!--Автор -->
+    <meta name="addres" content="artem1832@ukr.net, +380996291736"> <!-- Контакти -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+    <div id="shadow" class="shadow"></div>
+    <header class="header">
+    <div class="header__inner">
+        <div class="container">
+            <img src="img/logo.svg" class="header__logo">
+        </div>
+    </div>
+</header>
+    <section class="plugins">
+        <div class="plugins__inner container">
+            <p class="plugins__title">Plugins</p>
+            <div class="plugins__body">
+                <div class="plugins__item">
+    <div class="plugins__prev">
+        <div id="burger" class="burger" onclick="burger()">
+            <span></span>
+        </div>
+    </div>
+    <p class="plugins__name">Burger menu</p>
+    <button class="plugins__btn plugins__btn-burger">More!</button>
+</div>
+<div class="plugins__item">
+    <div class="plugins__prev">
+        <button id="gotop" class="gotop" ></button>
+    </div>
+    <p class="plugins__name">Go top</p>
+    <button class="plugins__btn plugins__btn-gotop">More!</button>
+</div>
+<!-- <div class="plugins__item">
+    <div class="plugins__prev"></div>
+    <p class="plugins__name">name</p>
+    <button class="plugins__btn">More!</button>
+</div> -->
+            </div>
+
+            <p class="plugins__title">Hover</p>
+            <div class="plugins__body">
+                <div class="plugins__item">
+    <div class="plugins__prev">
+        <p class="hover1">Lorem.</p>
+    </div>
+    <p class="plugins__name">Hover1</p>
+    <button class="plugins__btn plugins__btn-hover1">More!</button>
+</div>
+<!-- <div class="plugins__item">
+    <div class="plugins__prev"></div>
+    <p class="plugins__name">name</p>
+    <button class="plugins__btn">More!</button>
+</div> -->
+            </div>
+            <div id="pluginsCode" class="plugins__code">
+    <div class="plugins__code-burger">
+        <p class="plugins__name">html</p>
+<pre>
+<span><</span>div id="burger" class="burger" onclick="burger()">
+    <span><</span>span><span><</span>/span>
+<span><</span>/div>
+</pre>
+        <p class="plugins__name">scss</p>
+<pre>
+.burger{
+    position: relative;
+
+    height: 23px;
+    width: 30px;
+    cursor: pointer;
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #333333;
+        border-radius: 20px;
+        transition: all .5s;
+    }
+    &::before{
+        top: 0;
+    }
+    &::after{
+        bottom: 0;
+    }
+    & span{
+        position: absolute;
+        left: 0;
+        top: 10px;
+        background-color: #333333;
+        border-radius: 20px;
+        width: 100%;
+        height: 3px;
+        transition: all .5s;
+    }
+    &.active::before{
+        transform: rotate(45deg);
+        top: 10px;
+    }
+    &.active::after{
+        transform: rotate(-45deg);
+        bottom: 10px;
+    }
+    &.active span{
+        transform: scale(0);
+    }
+
+}
+</pre>
+        <p class="plugins__name">js</p>
+<pre>
+function burger () {
+    let burger = document.getElementById('burger');
+    burger.classList.toggle('active');
+}
+</pre>
+    </div>
+
+    <div class="plugins__code-hover1">
+                    <p class="plugins__name">scss</p>
+<pre>
+position: relative;
+&::after{
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    z-index: 1;
+    height: 2px;
+    width: 0;
+    background-color: #000;
+    transition: all .4s;
+}
+&:hover::after{
+    width: 50%;
+}
+&::before{
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 50%;
+    z-index: 1;
+    height: 2px;
+    width: 0;
+    background-color: #000;
+    transition: all .4s;
+}
+&:hover::before{
+    width: 50%;
+}
+</pre>
+    </div>
+
+    <div class="plugins__code-gotop">
+        <p class="plugins__name">html</p>
+<pre>
+<span><</span>button class="gotop"><span><</span>/button>
+</pre>
+        <p class="plugins__name">scss</p>
+<pre>
+.gotop{
+    display: none;
+    
+    font-size: 0;
+
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+    bottom: 4%;
+    right: 4%;
+    z-index: 1000;
+
+    overflow: hidden;
+
+    cursor: pointer;
+    background-color: #343D23;
+    border-radius: 50px;
+    opacity: .7;
+
+    background-image: url('../img/arr.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+    transition: all .3s;
+
+    &:hover{
+        opacity: 1;
+    }
+}    
+</pre>
+        <p class="plugins__name">js</p>
+<pre>
+$(() => {
+
+    $('.gotop').on( 'click', () => {
+        $("html, body").animate({
+        scrollTop:0
+        }, 0);
+    })
+})
+$(window).on('scroll', () => {
+
+    if ($(this).scrollTop()>500) {
+        
+        $('.gotop').fadeIn();
+    }
+
+    else {
+        $('.gotop').fadeOut();
+    }
+});
+</pre>
+    </div>
+    <!-- <div class="plugins__code-item">
+        <p class="plugins__name">html</p>
+<pre></pre>
+        <p class="plugins__name">scss</p>
+<pre></pre>
+        <p class="plugins__name">js</p>
+<pre></pre>
+    </div> -->
+
+</div>
+        </div>
+    </section>
+    <footer class="footer">
+    
+</footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>

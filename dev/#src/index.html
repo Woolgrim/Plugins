@@ -1,0 +1,25 @@
+@@include('_head.html',{
+    "title": "Title"
+})
+<body>
+    <div id="shadow" class="shadow"></div>
+    @@include('_header.html')
+    <section class="plugins">
+        <div class="plugins__inner container">
+            <p class="plugins__title">Plugins</p>
+            <div class="plugins__body">
+                @@include('_plugins__item.html')
+            </div>
+
+            <p class="plugins__title">Hover</p>
+            <div class="plugins__body">
+                @@include('_hover.html')
+            </div>
+            @@include('_plugins__code.html')
+        </div>
+    </section>
+    @@include('_footer.html')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
